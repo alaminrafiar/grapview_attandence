@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grapview_attandence/profile.dart';
-
+import 'package:grapview_attandence/pages/attendance.dart';
 
 
 class login_page extends StatefulWidget {
@@ -98,11 +97,7 @@ Widget buildPassword() {
       )
     ],
   );
-
 }
-
-
-
 
 class _login_pageState extends State<login_page> {
   @override
@@ -140,7 +135,6 @@ class _login_pageState extends State<login_page> {
                       Text(
                         "Sing in",
                         style: TextStyle(
-
                             fontWeight: FontWeight.bold,
                             fontSize: 40,
                             color: Colors.white),
@@ -149,18 +143,16 @@ class _login_pageState extends State<login_page> {
                         height: 50,
                       ),
                       buildEmail(),
-                      SizedBox(height: 20,),
-                      buildPassword(),
-
                       SizedBox(
                         height: 20,
                       ),
-
-                      const Text("Forgetpassword",
-
-                      style: TextStyle(
-                        decoration: TextDecoration.underline
+                      buildPassword(),
+                      SizedBox(
+                        height: 20,
                       ),
+                      const Text(
+                        "Forgetpassword",
+                        style: TextStyle(decoration: TextDecoration.underline),
                       ),
                       SizedBox(
                         height: 20,
@@ -168,21 +160,19 @@ class _login_pageState extends State<login_page> {
                       ElevatedButton(
                         child: Text(
                           "Log in",
-                          style:
-                          TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.purple,
-                          padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 80, vertical: 15),
                         ),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (c) =>  profile()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (c) => Attendance()));
                         },
                       ),
-
                     ],
                   ),
                 ),
